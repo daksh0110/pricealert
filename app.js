@@ -53,8 +53,8 @@ async function getRandomDocuments() {
 app.get("/", async function (req, res) {
   const docs = [];
 
-  docs.push(await getRandomDocuments());
-  res.send(docs);
+  // docs.push(await getRandomDocuments());
+  res.send("h1");
 });
 
 app.get("/Search", async function async(req, res) {
