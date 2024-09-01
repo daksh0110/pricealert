@@ -1,4 +1,3 @@
-const mongodbConnect = require("../lib/mongoose");
 const amazon = require("../lib/amazon");
 
 const amazonLink = require("../lib/amazonLink");

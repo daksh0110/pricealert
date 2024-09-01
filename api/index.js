@@ -1,21 +1,21 @@
 var express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
-const mongodbConnect = require("./lib/mongoose");
-const amazon = require("./lib/amazon");
-const User = require("./schema/createUserData");
-const { encryption, decryption } = require("./lib/encryption");
-const mobile = require("./schema/ProductSchema");
+const mongodbConnect = require("../backend/lib/mongoose");
+const amazon = require("../backend/lib/amazon");
+const User = require("../backend/schema/createUserData");
+const { encryption, decryption } = require("../backend/lib/encryption");
+
 const jwt = require("jsonwebtoken");
-const amazonLink = require("./lib/amazonLink");
+const amazonLink = require("../backend/lib/amazonLink");
 var cron = require("node-cron");
-const productLink = require("./schema/ProductLinkSchema");
-const Fetching = require("./Functions/Fetching");
+const productLink = require("../backend/schema/ProductLinkSchema");
+const Fetching = require("../backend/Functions/Fetching");
 const { compareSync } = require("bcrypt");
-const EmailModule = require("./lib/EmailModule");
-const AlertList = require("./schema/emailAlertSchema");
-const AmazonSearchqueries = require("./Functions/AmazonSearchqueries");
-const UpdatingProducts = require("./Functions/UpdatingProducts");
+
+const AlertList = require("../backend/schema/emailAlertSchema");
+const AmazonSearchqueries = require("../backend/Functions/AmazonSearchqueries");
+const UpdatingProducts = require("../backend/Functions/UpdatingProducts");
 var app = express();
 
 app.use(bodyParser.json());
