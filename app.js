@@ -23,7 +23,7 @@ app.use(cors());
 app.use(express.json());
 
 mongodbConnect();
-cron.schedule("0 * * * *", async () => {
+cron.schedule("* * * * *", async () => {
   console.log("running a task every day");
 
   AmazonSearchqueries();
