@@ -1,0 +1,14 @@
+2024/09/01-14:31:14.254 63b4 Reusing MANIFEST E:\Project\fooddeliveryappback\tmp\Default\Session Storage/MANIFEST-000001
+2024/09/01-14:31:14.261 63b4 Recovering log #121
+2024/09/01-14:31:14.262 63b4 Level-0 table #123: started
+2024/09/01-14:31:15.549 63b4 Level-0 table #123: 20485 bytes OK
+2024/09/01-14:31:15.570 63b4 Delete type=0 #121
+2024/09/01-14:31:15.571 2aa0 Compacting 4@0 + 1@1 files
+2024/09/01-14:31:15.615 2aa0 Generated table #125@0: 2557 keys, 62689 bytes
+2024/09/01-14:31:15.615 2aa0 Compacted 4@0 + 1@1 files => 62689 bytes
+2024/09/01-14:31:15.627 2aa0 compacted to: files[ 0 1 1 0 0 0 0 ]
+2024/09/01-14:31:15.629 2aa0 Delete type=2 #114
+2024/09/01-14:31:15.629 2aa0 Delete type=2 #116
+2024/09/01-14:31:15.629 2aa0 Delete type=2 #119
+2024/09/01-14:31:15.630 2aa0 Delete type=2 #121
+2024/09/01-14:31:15.630 2aa0 Delete type=2 #123

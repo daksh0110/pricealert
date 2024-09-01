@@ -1,0 +1,5 @@
+2024/09/01-14:31:10.990 1030 Reusing MANIFEST E:\Project\fooddeliveryappback\tmp\Default\Local Storage\leveldb/MANIFEST-000001
+2024/09/01-14:31:11.011 1030 Recovering log #594
+2024/09/01-14:31:11.013 1030 Level-0 table #597: started
+2024/09/01-14:31:11.047 1030 Level-0 table #597: 150429 bytes OK
+2024/09/01-14:31:11.079 1030 Delete type=0 #594
