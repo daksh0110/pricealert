@@ -1,21 +1,21 @@
 var express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
-const mongodbConnect = require("../backend/lib/mongoose");
-const amazon = require("../backend/lib/amazon");
-const User = require("../backend/schema/createUserData");
-const { encryption, decryption } = require("../backend/lib/encryption");
-
+const mongodbConnect = require("./lib/mongoose");
+const amazon = require("./lib/amazon");
+const User = require("./schema/createUserData");
+const { encryption, decryption } = require("./lib/encryption");
+const mobile = require("./schema/ProductSchema");
 const jwt = require("jsonwebtoken");
-const amazonLink = require("../backend/lib/amazonLink");
+const amazonLink = require("./lib/amazonLink");
 var cron = require("node-cron");
-const productLink = require("../backend/schema/ProductLinkSchema");
-const Fetching = require("../backend/Functions/Fetching");
+const productLink = require("./schema/ProductLinkSchema");
+const Fetching = require("./Functions/Fetching");
 const { compareSync } = require("bcrypt");
-
-const AlertList = require("../backend/schema/emailAlertSchema");
-const AmazonSearchqueries = require("../backend/Functions/AmazonSearchqueries");
-const UpdatingProducts = require("../backend/Functions/UpdatingProducts");
+const EmailModule = require("./lib/EmailModule");
+const AlertList = require("./schema/emailAlertSchema");
+const AmazonSearchqueries = require("./Functions/AmazonSearchqueries");
+const UpdatingProducts = require("./Functions/UpdatingProducts");
 var app = express();
 
 app.use(bodyParser.json());
@@ -23,12 +23,12 @@ app.use(cors());
 app.use(express.json());
 
 mongodbConnect();
-cron.schedule("* * * * *", async () => {
+cron.schedule("0 * * * *", async () => {
   console.log("running a task every day");
 
   AmazonSearchqueries();
 
-  // UpdatingProducts();
+  UpdatingProducts();
   // const docs = await AlertList.find();
 
   // for (const doc of docs) {
@@ -53,8 +53,8 @@ async function getRandomDocuments() {
 app.get("/", async function (req, res) {
   const docs = [];
 
-  // docs.push(await getRandomDocuments());
-  res.send("h1");
+  docs.push(await getRandomDocuments());
+  res.send(docs);
 });
 
 app.get("/Search", async function async(req, res) {

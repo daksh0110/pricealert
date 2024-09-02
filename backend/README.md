@@ -1,2 +1,0 @@
-# pricealertbackend
-bakcend for PricealertApp
