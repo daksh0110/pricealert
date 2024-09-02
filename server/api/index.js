@@ -180,6 +180,8 @@ app.get("/alertlist/", async (req, res) => {
   }
   res.send(products);
 });
-app.listen(9000, function () {
-  console.log("Example app listening on port!");
-});
+// app.listen(9000, function () {
+//   console.log("Example app listening on port!");
+// });
+
+module.exports = app;
