@@ -51,10 +51,11 @@ async function getRandomDocuments() {
 }
 
 app.get("/", async function (req, res) {
-  const docs = [];
+  // const docs = [];
 
-  docs.push(await getRandomDocuments());
-  res.send(docs);
+  // docs.push(await getRandomDocuments());
+  // res.send(docs);
+  res.send("grwfg");
 });
 
 app.get("/Search", async function async(req, res) {
