@@ -111,13 +111,13 @@ export default function Authentication() {
   async function handdleRegistration(ev) {
     ev.preventDefault();
     const data = { name, email, password };
-    const response = await axios.post("http://localhost:9000/Signup", data);
+    const response = await axios.post("/server/api/Signup", data);
     alert(response.data);
   }
 
   async function handleLogin(ev) {
     const data = { email, password };
-    const response = await axios.post("http://localhost:9000/login", data);
+    const response = await axios.post("/server/api/login", data);
     localStorage.setItem("token", response.data);
     window.location.reload();
   }
@@ -126,7 +126,7 @@ export default function Authentication() {
       if (user && user.email) {
         try {
           const response = await axios.get(
-            `http://localhost:9000/alertlist/?id=${user.email}`
+            `/server/api/alertlist/?id=${user.email}`
           );
           setAlerList(response.data);
         } catch (error) {

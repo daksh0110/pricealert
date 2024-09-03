@@ -36,7 +36,7 @@ export default function ProductLayout() {
   }, []);
 
   async function fetch() {
-    await axios.get("http://localhost:9000/").then((res) => {
+    await axios.get("/server/api/").then((res) => {
       setData(res.data[0]);
       console.log(res.data);
     });

@@ -55,7 +55,7 @@ export default function ProductDetail() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get("http://localhost:9000/id/?id=" + id);
+      const response = await axios.get("/server/api/id/?id=" + id);
       const fetchedProduct = response.data;
       setProduct(fetchedProduct);
 
