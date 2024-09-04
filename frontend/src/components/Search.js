@@ -90,7 +90,7 @@ export default function Search() {
     if (checkboxItem) {
       setLoading(true);
       await axios
-        .get(process.env.BASE_URL + "/api/Search/?searchquery=" + searchText)
+        .get(process.env.BASE_URL + "/Search/?searchquery=" + searchText)
         .then((res) => {
           setTimeout(() => {
             setData(res.data);
@@ -100,7 +100,7 @@ export default function Search() {
     } else if (checkboxLink) {
       setLoading(true);
       await axios
-        .get(process.env.BASE_URL + "/api/Search/?searchquery=" + searchText)
+        .get(process.env.BASE_URL + "/Search/?searchquery=" + searchText)
         .then((res) => {
           console.log(res.data);
           setData(res.data);
