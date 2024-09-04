@@ -85,7 +85,10 @@ const AlertPopUp = ({ setTrigger, product }) => {
     ev.preventDefault();
     setTrigger(false);
     const data = { user, amount, id: product._id };
-    const response = await axios.post("/server/api/emailalert", data);
+    const response = await axios.post(
+      process.env.BASE_URL + "/api/emailalert",
+      data
+    );
     console.log(response.data);
     alert("Email Alert Enabled");
   }

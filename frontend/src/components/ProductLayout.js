@@ -36,7 +36,7 @@ export default function ProductLayout() {
   }, []);
 
   async function fetch() {
-    await axios.get(process.env.BASE_URL + "/server/api/").then((res) => {
+    await axios.get(process.env.BASE_URL + "/api/").then((res) => {
       setData(res.data[0]);
       console.log(res.data);
     });

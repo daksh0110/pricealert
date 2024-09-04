@@ -112,7 +112,7 @@ export default function Authentication() {
     ev.preventDefault();
     const data = { name, email, password };
     const response = await axios.post(
-      process.env.BASE_URL + "/server/api/Signup",
+      process.env.BASE_URL + "/api/Signup",
       data
     );
     alert(response.data);
@@ -121,7 +121,7 @@ export default function Authentication() {
   async function handleLogin(ev) {
     const data = { email, password };
     const response = await axios.post(
-      process.env.BASE_URL + "/server/api/login",
+      process.env.BASE_URL + "/api/login",
       data
     );
     localStorage.setItem("token", response.data);
