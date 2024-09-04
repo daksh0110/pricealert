@@ -19,7 +19,11 @@ const UpdatingProducts = require("../Functions/UpdatingProducts");
 var app = express();
 
 app.use(bodyParser.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://pricealert-a532.vercel.app/",
+  })
+);
 app.use(express.json());
 
 mongodbConnect();
