@@ -111,13 +111,19 @@ export default function Authentication() {
   async function handdleRegistration(ev) {
     ev.preventDefault();
     const data = { name, email, password };
-    const response = await axios.post(process.env.BASE_URL + "/Signup", data);
+    const response = await axios.post(
+      process.env.BASE_URL + "/api/Signup",
+      data
+    );
     alert(response.data);
   }
 
   async function handleLogin(ev) {
     const data = { email, password };
-    const response = await axios.post(process.env.BASE_URL + "/login", data);
+    const response = await axios.post(
+      process.env.BASE_URL + "/api/login",
+      data
+    );
     localStorage.setItem("token", response.data);
     window.location.reload();
   }
@@ -125,7 +131,7 @@ export default function Authentication() {
     async function fetchAlertList() {
       if (user && user.email) {
         try {
-          const response = await axios.get(`/alertlist/?id=${user.email}`);
+          const response = await axios.get(`/api/alertlist/?id=${user.email}`);
           setAlerList(response.data);
         } catch (error) {
           console.error("Error fetching alert list:", error);
