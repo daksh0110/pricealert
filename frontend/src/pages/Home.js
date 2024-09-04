@@ -7,7 +7,7 @@ export default function Home() {
     <>
       <Nav />
       <Search />
-      <ProductLayout />
+      {/* <ProductLayout /> */}
     </>
   );
 }
