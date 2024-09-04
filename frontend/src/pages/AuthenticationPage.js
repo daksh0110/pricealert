@@ -111,13 +111,19 @@ export default function Authentication() {
   async function handdleRegistration(ev) {
     ev.preventDefault();
     const data = { name, email, password };
-    const response = await axios.post("/server/api/Signup", data);
+    const response = await axios.post(
+      process.env.BASE_URL + "/server/api/Signup",
+      data
+    );
     alert(response.data);
   }
 
   async function handleLogin(ev) {
     const data = { email, password };
-    const response = await axios.post("/server/api/login", data);
+    const response = await axios.post(
+      process.env.BASE_URL + "/server/api/login",
+      data
+    );
     localStorage.setItem("token", response.data);
     window.location.reload();
   }
